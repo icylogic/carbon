@@ -3,6 +3,7 @@ menu:
     archives: /archives
 
 excerpt: false
+ie: true
 feed: /atom.xml
 repo: https://icylogic.net
 
