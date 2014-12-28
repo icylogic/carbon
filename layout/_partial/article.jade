@@ -1,0 +1,16 @@
+//
+   Created by icy on 12/18/2014.
+
+mixin article(article)
+  .meta
+    include meta
+    +meta(article)
+  .article-content
+    != article.content
+  nav.pagination
+    if article.prev
+      a#left-navigator(href=url_for(article.prev.path))
+        = article.prev.title
+    if article.next
+      a#right-navigator(href=url_for(article.next.path))
+        = article.next.title

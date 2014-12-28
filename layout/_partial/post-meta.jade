@@ -1,0 +1,12 @@
+//
+   Created by icy on 12/17/2014.
+
+mixin date(date)
+  = date.format(config.date_format)
+
+mixin categories(categories)
+  if categories.length > 0
+  ul
+    each category in categories.toArray()
+      li.meta-li
+        = category.name

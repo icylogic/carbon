@@ -1,0 +1,13 @@
+//
+   Created by icy on 12/17/2014.
+
+meta(charset='UTF-8')
+if config.author
+  meta(name='author', content=config.author)
+if config.description
+  meta(name='desciption', content=config.description)
+meta(name='viewport', content='width=device-width, initial-scale=1.0')
+title
+  = config.title
+link(rel='stylesheet', type='text/css', href=config.cdn.normalize + '/normalize/3.0.1/normalize.min.css')
+link(rel='stylesheet', type='text/css', href=config.cdn.custom + '/css/carbon.css')

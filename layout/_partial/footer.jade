@@ -1,0 +1,23 @@
+mixin footer-link(name)
+  li
+    if config.language === 'zh-CN'
+      a.zh(href=url_for(theme.menu[name]))
+        = __(name)
+    else
+      a(href=url_for(theme.menu[name]))
+        = __(name)
+
+ul
+  +footer-link('about')
+  +footer-link('archives')
+  li
+    a.out-site(href=url_for(theme.feed))
+      = __("feed")
+  li
+    a.out-site(href=theme.repo) Theme.Carbon
+  li
+    a.out-site(href='https://github.com/hexojs/hexo') Hexo
+
+script(src=config.cdn.jQuery + '/jquery/2.1.1/jquery.min.js')
+script(src=config.cdn.pjax + '/jquery.pjax/1.9.2/jquery.pjax.min.js')
+script(src=config.cdn.custom + '/js/carbon.js')

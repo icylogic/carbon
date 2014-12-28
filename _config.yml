@@ -1,0 +1,8 @@
+menu:
+    about: /about
+    archives: /archives
+
+excerpt: false
+feed: /atom.xml
+repo: https://icylogic.net
+

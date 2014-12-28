@@ -1,0 +1,16 @@
+//
+   Created by icy on 12/17/2014.
+
+extends base
+
+block content
+  ul.abstract-list
+    include _partial/list
+    +list(page)
+  nav.pagination
+    if page.prev
+      a#left-navigator(href=url_for(page.prev_link))
+        = __('prev')
+    if page.next
+      a#right-navigator(href=url_for(page.next_link))
+        = __('next')
