@@ -6,7 +6,7 @@ excerpt: true
 feed: /atom.xml
 repo: https://icylogic.net
 
-duoshuo: 
+duoshuo:
 
 cdn:
   normalize: '//dn-staticfile.qbox.me'    
