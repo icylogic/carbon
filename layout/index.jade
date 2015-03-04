@@ -1,6 +1,3 @@
-//
-   Created by icy on 12/17/2014.
-
 extends base
 
 block content
@@ -10,7 +7,7 @@ block content
   nav.pagination
     if page.prev
       a#left-navigator(href=url_for(page.prev_link))
-        = __('prev')
+        = __('newer')
     if page.next
       a#right-navigator(href=url_for(page.next_link))
-        = __('next')
+        = __('older')

@@ -1,12 +1,9 @@
-//
-   Created by icy on 12/18/2014.
-
 mixin list(page)
   include meta
   each post in page.posts.toArray()
     li
       .meta
         +meta(post)
-      if(config.excerpt)
+      if(theme.excerpt)
         .excerpt
           !=post.excerpt

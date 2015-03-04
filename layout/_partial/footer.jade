@@ -1,13 +1,14 @@
 mixin footer-link(name)
-  li
-    if config.language === 'zh-CN'
-      a.zh(href=url_for(theme.menu[name]))
-        = __(name)
-    else
-      a(href=url_for(theme.menu[name]))
-        = __(name)
+  if theme.menu[name]
+    li
+      if config.language === 'zh-CN' || config.language === 'zh-TW'
+        a.zh(href=url_for(theme.menu[name]))
+          = __(name)
+      else
+        a(href=url_for(theme.menu[name]))
+          = __(name)
 
-ul
+ul#footer-links
   +footer-link('about')
   +footer-link('archives')
   li
@@ -18,10 +19,10 @@ ul
   li
     a.out-site(href='https://github.com/hexojs/hexo') Hexo
 
-script(src=config.cdn.jQuery + '/jquery/2.1.1/jquery.min.js')
-script(src=config.cdn.pjax + '/jquery.pjax/1.9.2/jquery.pjax.min.js')
-script(src=config.cdn.custom + '/js/carbon.js')
-if theme.ie
-  <!--[if lt IE 10]>
-  script(src=config.cdn.custom + '/js/ie.js')
-  <![endif]-->
+script(src=theme.cdn.jQuery + '/jquery/2.1.1/jquery.min.js')
+if theme.duoshuo
+  script(type='text/javascript').
+    var duoshuoQuery = {short_name:"!{theme.duoshuo}"}
+  script(src=theme.cdn.duoshuo + "/embed.js")
+script(src=theme.cdn.pjax + '/jquery.pjax/1.9.2/jquery.pjax.min.js')
+script(src=theme.cdn.carbon + '/js/carbon.js')

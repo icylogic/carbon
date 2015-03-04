@@ -28,12 +28,22 @@
     .article-date
       color darkgray
 
+  .extra
+    float right
+    padding-left 0.5rem
+    display none
+
   //index
   .abstract-list
   .excerpt
     padding 0
+    color dimgray
+
+  #more
+    display none
 
   .article-content
+    padding-top 0.5rem
     h2
       font-weight lighter
       font-size 1.3rem
@@ -55,14 +65,20 @@
     margin-right 0
     margin-left 0
 
-  #left-navigator
-    float left
+  nav
+    clear: both
+    text-align center
 
-  #right-navigator
-    float right
+    #left-navigator
+      max-width 40%
+      float left
+
+    #right-navigator
+      float right
 
 //footer
-#footer
+#footer-links
+  clear right
   list-style-type none
   padding-top 3rem
   float right

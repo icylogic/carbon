@@ -1,16 +1,28 @@
-//
-   Created by icy on 12/18/2014.
-
 mixin article(article)
+  include meta
   .meta
-    include meta
     +meta(article)
+  .extra
+    +extra('tags', article.tags)
+  .extra
+    +extra('categories', article.categories)
   .article-content
+    if article.photos
+      .gallery
+        for photo in article.photos
+          a.gallery-img(href=url_for(photo))
+            img(src=url_for(photo))
     != article.content
+  #comments
   nav.pagination
+    include title
     if article.prev
       a#left-navigator(href=url_for(article.prev.path))
-        = article.prev.title
+        +title(article.prev)
+    if theme.duoshuo
+      a.comments-switch(href="javascript:void(0);", key=article.path, url=article.parmalink, duoshuo=theme.duoshuo)
+        = __('comments')
     if article.next
       a#right-navigator(href=url_for(article.next.path))
-        = article.next.title
+        +title(article.next)
+

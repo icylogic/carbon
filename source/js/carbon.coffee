@@ -1,5 +1,20 @@
 (($)->
   $ document
+  .on 'click', '.comments-switch',
+    () ->
+      comments = $('#comments')
+      if comments.has("div").length > 0
+        comments.toggle('fast')
+        return;
+      el = document.createElement('div')
+      el.setAttribute('data-thread-key', $(this).attr('key'))
+      el.setAttribute('data-url', $(this).attr('url'))
+      el.setAttribute('data-author-key', $(this).attr('duoshuo'))
+      DUOSHUO.EmbedThread(el)
+      comments.append(el).hide().fadeIn('')
+  .on 'click', '.extra-switch',
+    () ->
+      $('.extra').toggle('fast')
   .pjax 'a',
     '#content',
     fragment:'#content'

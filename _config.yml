@@ -1,9 +1,17 @@
 menu:
-    about: /about
-    archives: /archives
+  about: /about
+  archives: /archives
 
-excerpt: false
-ie: true
+excerpt: true
 feed: /atom.xml
 repo: https://icylogic.net
 
+duoshuo: 
+
+cdn:
+  normalize: '//dn-staticfile.qbox.me'    
+  carbon: ''
+  duoshuo: '//static.duoshuo.com'
+  jQuery: '//dn-staticfile.qbox.me'
+  pjax: '//dn-staticfile.qbox.me'    
+  

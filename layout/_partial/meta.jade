@@ -1,10 +1,13 @@
-//
-   Created by icy on 12/17/2014.
-
 mixin meta(article)
   h2.article-title
-    a(href=url_for(article.path))
-      = article.title
+    include title
+    if article.link
+      a(href=article.link, target='_blank')
+        +title(article)
+    else
+      a(href=url_for(article.path))
+        +title(article)
   .article-date
-    include post-meta
-    +date(article.date)
+    a.extra-switch(href='javascript:void(0);')
+      include post-meta
+      +date(article.date)
