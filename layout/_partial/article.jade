@@ -24,7 +24,7 @@ mixin article(article)
         = __('comments')
     if (config.disqus_shortname && article.comments)
       include disqus
-      +disqus
+      +disqus_thread
     if article.next
       a#right-navigator(href=url_for(article.next.path))
         +title(article.next)
