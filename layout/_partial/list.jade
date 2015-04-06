@@ -7,9 +7,3 @@ mixin list(page)
       if(theme.excerpt)
         .excerpt
           !=post.excerpt
-      if config.disqus_shortname
-        include disqus
-        +disqus_comments_ticker(post)
-  if config.disqus_shortname
-    include disqus
-    +disqus_comments_script
