@@ -19,10 +19,17 @@ mixin article(article)
     if article.prev
       a#left-navigator(href=url_for(article.prev.path))
         +title(article.prev)
+        
+    if config.disqus_shortname
+      div.comments
+        div#disqus_thread
+          noscript.
+            Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+
     if theme.duoshuo
-      a.comments-switch(href="javascript:void(0);", key=article.path, url=article.parmalink, duoshuo=theme.duoshuo)
+      a.comments-switch(href="javascript:void(0);", key=article.path, url=article.permalink, duoshuo=theme.duoshuo)
         = __('comments')
+    
     if article.next
       a#right-navigator(href=url_for(article.next.path))
         +title(article.next)
-
