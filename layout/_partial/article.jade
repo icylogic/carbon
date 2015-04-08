@@ -19,10 +19,13 @@ mixin article(article)
     if article.prev
       a#left-navigator(href=url_for(article.prev.path))
         +title(article.prev)
-    if theme.duoshuo
-      a.comments-switch(href="javascript:void(0);", key=article.path, url=article.parmalink, duoshuo=theme.duoshuo)
-        = __('comments')
+    if article.comments
+      if theme.duoshuo
+        a.comments-switch(href="javascript:void(0);", key=article.path, url=article.permalink, duoshuo=theme.duoshuo)
+          = __('comments')
+      if config.disqus_shortname
+        include disqus
+        +disqus_thread(article)
     if article.next
       a#right-navigator(href=url_for(article.next.path))
         +title(article.next)
-
