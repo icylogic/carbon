@@ -3,9 +3,9 @@ mixin article(article)
   .meta
     +meta(article)
   .extra
-    +extra('tags', article.tags)
+    +extra(__('tags'), article.tags)
   .extra
-    +extra('categories', article.categories)
+    +extra(__('categories'), article.categories)
   .article-content
     if article.photos
       .gallery
