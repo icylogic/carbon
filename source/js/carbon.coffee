@@ -1,8 +1,8 @@
 (($)->
   $ document
-  .on 'click', '.comments-switch',
+  .on 'click', '.comments-switch-duoshuo',
     () ->
-      comments = $('#comments')
+      comments = $('#duoshuo_thread')
       if comments.has("div").length > 0
         comments.toggle('fast')
         return;
