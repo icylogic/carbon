@@ -5,7 +5,9 @@ mixin meta(article)
       a(href=article.link, target='_blank')
         +title(article)
     else
-      a(href=url_for(article.path))
+      - var path = article.path.replace('/index.html', '')
+      //-fix for permalnk in pages
+      a(href=url_for(path))
         +title(article)
   .article-date
     a.extra-switch(href='javascript:void(0);')
