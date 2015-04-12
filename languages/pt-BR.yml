@@ -1,10 +1,10 @@
-newer: Novos
-older: Antigos
-about: Sobre
-archives: Arquivos
-feed: RSS
+newer: '<'
+older: '>'
+about: '?'
+archives: '*'
+feed: '!'
 no-title: Sem Título
-comments: Comentários
+comments: Subcargas
 none: Nenhum
 
 categories: Categorias

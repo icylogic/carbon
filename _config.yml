@@ -9,9 +9,8 @@ repo: https://icylogic.net
 duoshuo:
 
 cdn:
-  normalize: '//dn-staticfile.qbox.me'    
+  normalize: 'https://cdnjs.cloudflare.com/ajax/libs'
   carbon: ''
   duoshuo: '//static.duoshuo.com'
-  jQuery: '//dn-staticfile.qbox.me'
-  pjax: '//dn-staticfile.qbox.me'    
-  
+  jQuery: 'https://cdnjs.cloudflare.com/ajax/libs'
+  pjax: 'https://cdnjs.cloudflare.com/ajax/libs'
