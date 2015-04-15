@@ -7,11 +7,11 @@ feed: /atom.xml
 repo: https://icylogic.net
 
 duoshuo: false
-mathjax: false
+mathjax: true
 
 cdn:
   normalize: '//dn-staticfile.qbox.me'    
-  carbon: ''
+  carbon: '/carbon'
   duoshuo: '//static.duoshuo.com'
   jQuery: '//dn-staticfile.qbox.me'
   pjax: '//dn-staticfile.qbox.me'    
