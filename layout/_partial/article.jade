@@ -1,11 +1,6 @@
 mixin article(article)
   include meta
-  .meta
-    +meta(article)
-  .extra
-    +extra(__('tags'), article.tags)
-  .extra
-    +extra(__('categories'), article.categories)
+  +meta(article)
   .article-content
     if article.photos
       .gallery

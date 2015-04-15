@@ -1,0 +1,9 @@
+script(src=theme.cdn.jQuery + '/jquery/2.1.1/jquery.min.js')
+if theme.duoshuo
+  script(type='text/javascript').
+    var duoshuoQuery = {short_name:"!{theme.duoshuo}"}
+  script(src=theme.cdn.duoshuo + "/embed.js")
+script(src=theme.cdn.pjax + '/jquery.pjax/1.9.2/jquery.pjax.min.js')
+script(src=theme.cdn.carbon + '/js/carbon.js')
+if config.google_analytics
+  include analytics
