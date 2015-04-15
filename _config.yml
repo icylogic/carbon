@@ -7,6 +7,7 @@ feed: /atom.xml
 repo: https://icylogic.net
 
 duoshuo:
+mathjax: false
 
 cdn:
   normalize: '//dn-staticfile.qbox.me'    
@@ -14,4 +15,5 @@ cdn:
   duoshuo: '//static.duoshuo.com'
   jQuery: '//dn-staticfile.qbox.me'
   pjax: '//dn-staticfile.qbox.me'    
+  mathjax: '//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
   

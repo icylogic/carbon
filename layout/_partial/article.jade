@@ -18,6 +18,8 @@ mixin article(article)
     if article.next
       a#right-navigator(href=url_for(article.next.path))
         +title(article.next)
+  if theme.mathjax
+    include mathjax
 
 mixin comments_thread(article)
   if article.comments
