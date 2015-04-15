@@ -6,7 +6,7 @@ excerpt: true
 feed: /atom.xml
 repo: https://icylogic.net
 
-duoshuo:
+duoshuo: false
 mathjax: false
 
 cdn:
