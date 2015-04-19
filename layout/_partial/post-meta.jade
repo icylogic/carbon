@@ -2,9 +2,18 @@ mixin date(date)
   = date.format(config.date_format)
 
 mixin extra(name, list)
-  = __(name) + ': '
+  = __(name) + ':'
   if list && list.length > 0
+    - colon = false
     each item in list.toArray()
-      = item.name + ' '
+      if colon
+        = ','
+      - colon = true
+      = ' '
+      a(href=url_for(item.path))
+        = item.name
+        if theme.tagcount
+          = ' (' + item.posts.length + ')'
+    = '.'
   else
-    = __('none')
+    = ' ' + __('none') + '.'

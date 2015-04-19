@@ -8,12 +8,13 @@ repo: https://icylogic.net
 
 duoshuo: false
 mathjax: true
+#Displays count on tag/category links
+tagcount: false
 
 cdn:
-  normalize: '//dn-staticfile.qbox.me'    
+  normalize: '//dn-staticfile.qbox.me'
   carbon: ''
   duoshuo: '//static.duoshuo.com'
   jQuery: '//dn-staticfile.qbox.me'
-  pjax: '//dn-staticfile.qbox.me'    
+  pjax: '//dn-staticfile.qbox.me'
   mathjax: '//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
-  
