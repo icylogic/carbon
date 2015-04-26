@@ -2,25 +2,34 @@
   max-width 100%
 
 html
-  font-size 100%
-  font-family font-family-sans
+  font-size base-size
+  font-family font-family-ui
+  background-color background-color
+  color main-color
 
 ol
   padding-left 1.5rem
   list-style-type lower-greek
-
 
 ul
   list-style-type none
 
 a
   text-decoration none
-  color black
+  color link-color
   transition color fade-in ease-in delay
   &:hover
-    color cornflowerblue
+    color link-hover-color
 
 blockquote
   display flex
   p
     margin-left auto
+
+h1
+h2
+h3
+h4
+h5
+h6
+  font-family font-family-headline

@@ -1,7 +1,7 @@
 mixin disqus_thread_script(article)
   script.
     //fix for permalink in pages
-    var path = '#{article.path}'.replace('/index.html', '');
+    var path = '#{article.path}'.replace(/(\/index.html)|(\/$)/g, '');
     var disqus_shortname = '#{config.disqus_shortname}';
     var disqus_identifier = path;
     var disqus_title = '#{article.title}';
