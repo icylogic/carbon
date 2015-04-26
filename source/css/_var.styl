@@ -1,18 +1,40 @@
 //sizes
+base-size = 100%
 
 //intervals
 delay = 0s
 fade-in = 0.2s
 fade-out = 0s
 
-//fonts
-web-sans = 'Open Sans', 'Droid Sans', 'Source Sans Pro', 'Source Hans Sans'
+//fonts - partials
+web-sans = 'Open Sans', 'Source Sans Pro', 'Source Hans Sans'
+web-serif = 'Tinos', 'Droid Serif'
 web-mono = 'Source Code Pro', 'DejaVu Sans Mono', 'Droid Sans Mono'
+os-sans = 'Segoe UI', 'Cantarell', 'Ubuntu' 'Helvetica Neue', 'Lucida Grande', 'Roboto', 'Droid Sans', 'Noto'
+
+//fonts - full default stacks
+font-family-os = os-sans, sans-serif
 font-family-sans = web-sans, 'Helvetica Neue', 'Segoe UI', Verdana, Tahoma, Arial, 'Hiragino Sans GB', 'Microsoft YaHei', 'Microsoft YaHei UI', 'WenQuanYi Micro Hei', sans-serif
-font-family-serif = Georgia, 'Times New Roman', serif
-font-family-mono = web-mono, Menlo, Consolas, Monaco, 'Lucida Console', 'Courier', monoscape
+font-family-serif = web-serif, Georgia, 'Times New Roman', serif
+font-family-mono = web-mono, Menlo, Consolas, Monaco, 'Lucida Console', 'Courier', monospace
+
+//fonts - example for custom stack
+grotesque = 'Helvetica Neue', 'Tex Gyre Heros', 'Nimbus Sans', 'Nimbus Sans L', web-sans, 'DejaVu Sans', 'Bitstream Vera Sans', Helvetica, sans-serif
+
+//font stacks for blog
+font-family-title = font-family-sans
+font-family-headline = font-family-sans
+font-family-ui = font-family-sans
+font-family-content = font-family-sans
 
 //colors
-dimgray =#696969
+background-color = white
+main-color = black
+date-color =#696969
 link-hover-color = cornflowerblue
-link-color = #495A80
+link-color = main-color
+archive-color = dimgray
+extra-color = archive-color
+//bogus style
+bogus
+  font-size inherit

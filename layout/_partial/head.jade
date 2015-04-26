@@ -9,7 +9,8 @@ title
     = page.title
   else
     = config.title
-link(rel='stylesheet', type='text/css', href=theme.cdn.normalize + '/normalize/3.0.1/normalize.min.css')
+//- Not needed anymore - normalize is now included on the preprocessed sheet 
+//- link(rel='stylesheet', type='text/css', href=theme.cdn.normalize + '/normalize/3.0.1/normalize.min.css')
 link(rel='stylesheet', type='text/css', href=theme.cdn.carbon + '/css/carbon.css')
 if theme.favicon
   link(rel="icon", href=theme.favicon)
