@@ -1,9 +1,8 @@
-(($)->
+(($) ->
   $ document
-  .on 'click', '.comments-switch-duoshuo',
-    () ->
+    .on 'click', '.comments-switch-duoshuo', ->
       comments = $('#duoshuo_thread')
-      if comments.has("div").length > 0
+      if comments.has('div').length > 0
         comments.toggle('fast')
         return;
       el = document.createElement('div')
@@ -12,19 +11,23 @@
       el.setAttribute('data-author-key', $(this).attr('duoshuo'))
       DUOSHUO.EmbedThread(el)
       comments.append(el).hide().fadeIn('')
-  .on 'click', '.extra-switch',
-    () ->
+
+    .on 'click', '.extra-switch', ->
       $('.extra').toggle('fast')
-  .pjax 'a',
-    '#content',
-    fragment:'#content'
-    timeout: 10000
-  .on 'pjax:send',
-    ()->
+
+    .pjax 'a',
+      '#content',
+      fragment:'#content'
+      timeout: 10000
+
+    .on 'pjax:send', ->
       $ '#content'
-      .fadeTo 0, 0
-  .on 'pjax:complete',
-    ()->
+        .fadeTo 0, 0
+
+    .on 'pjax:complete', ->
       $ '#content'
-      .fadeTo "fast", 1
+        .fadeTo 'fast', 1
+        # Fix for Google Analytics
+        ga 'set', 'location', window.location.href
+        ga 'sent', 'pageview'
 ) jQuery
