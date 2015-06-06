@@ -1,20 +1,19 @@
 mixin footer-link(name)
   if theme.menu[name]
-    li
-      if config.language === 'zh-CN' || config.language === 'zh-TW'
-        a.zh(href=url_for(theme.menu[name]))
-          = __(name)
-      else
-        a(href=url_for(theme.menu[name]))
-          = __(name)
+    +link(__(name), url_for(theme.menu[name]))
+
+mixin link(name, url, isOut)
+  li
+    - var zn = config.language === 'zh-CN' || config.language === 'zh-TW'
+    a(class={'zn': zn, 'out-site': isOut} href=url)
+      = name
+      
+mixin external-link(name, url)
+  +link(name, url, true)
 
 ul#footer-links
   +footer-link('about')
   +footer-link('archives')
-  li
-    a.out-site(href=url_for(theme.feed))
-      = __("feed")
-  li
-    a.out-site(href=theme.repo) Theme.Carbon
-  li
-    a.out-site(href='https://github.com/hexojs/hexo') Hexo
+  +link(__('feed'), url_for(theme.feed))
+  +external-link('Theme.Carbon', theme.repo)
+  +external-link('Hexo', 'https://github.com/hexojs/hexo')
