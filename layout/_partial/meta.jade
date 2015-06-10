@@ -6,8 +6,9 @@ mixin meta(article)
         a(href=article.link, target='_blank')
           +title(article)
       else
-        - var path = article.path.replace('/index.html', '')
-        //-fix for permalnk in pages
+        - var regex = /(\/index\.html?$)|(\/?$)/;
+        - var path = article.path.replace(regex, '');
+        //-fix for permalink in pages
         a(href=url_for(path))
           +title(article)
     .article-date

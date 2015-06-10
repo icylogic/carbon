@@ -26,9 +26,8 @@ mixin comments_thread(article)
     if theme.duoshuo
       #duoshuo_thread.comments
     if config.disqus_shortname
-      include disqus
       #disqus_thread.comments
-        +disqus_thread_script(article)
+        include disqus
       
 mixin comments_switch(article)
   if article.comments

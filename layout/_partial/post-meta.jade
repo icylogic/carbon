@@ -2,9 +2,19 @@ mixin date(date)
   = date.format(config.date_format)
 
 mixin extra(name, list)
-  = __(name) + ': '
-  if list && list.length > 0
-    each item in list.toArray()
-      = item.name + ' '
-  else
-    = __('none')
+  span(class=name)
+    = __(name) + ': '
+    if list && list.length > 0
+      - var colon = false
+      each item in list.toArray()
+        if colon
+          = ', '
+        +extralink(item)
+        - colon = true
+      = '.'
+    else
+      = __('none') + '.'
+
+mixin extralink(item)
+  a(href=url_for(item.path))
+    = item.name
