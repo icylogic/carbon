@@ -8,6 +8,7 @@ repo: https://icylogic.net
 
 duoshuo: false
 mathjax: true
+fancybox: true
 
 cdn:
   normalize: '//dn-staticfile.qbox.me'    
