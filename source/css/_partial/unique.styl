@@ -61,6 +61,31 @@
         margin-left -0.3rem
     p
       font-weight normal
+    blockquote
+      font-family font-family-serif
+      margin 0.5rem 2rem
+      padding-left 2rem
+      color dimgray
+      position relative
+      display block
+      footer
+        font-style italic
+        color darkgray
+        font-size 0.8em
+        margin-top 0.5rem
+        display block
+        cite
+          margin-left 0.5em
+        &:before
+          content '-'
+      &:before
+        display: block;
+        content: open-quote
+        font-size: 5em;
+        position: absolute;
+        left: -1rem;
+        top: -1rem;
+        color: #7a7a7a;
 
   figure.highlight
     margin-right 0
