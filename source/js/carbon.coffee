@@ -1,4 +1,16 @@
 (($) ->
+  if performFancybox
+    setFancybox = ->
+      $ '.article-content img'
+      .each ->
+        image = $ this
+        imageLink = image.parent('a')
+        if (imageLink.size() < 1)
+          imageLink = image.wrap('<a href="' + this.getAttribute('src') + '"></a>').parent('a')
+        imageLink.fancybox()
+  else
+    setFancybox = ->
+
   $ document
     .on 'click', '.comments-switch-duoshuo', ->
       comments = $('#duoshuo_thread')
@@ -28,6 +40,10 @@
       $ '#content'
         .fadeTo 'fast', 1
         # Fix for Google Analytics
+        setFancybox()
         ga 'set', 'location', window.location.href
         ga 'sent', 'pageview'
+
+    .ready ->
+      setFancybox()
 ) jQuery

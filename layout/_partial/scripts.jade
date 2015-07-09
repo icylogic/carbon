@@ -4,20 +4,11 @@ if theme.duoshuo
     var duoshuoQuery = {short_name:"!{theme.duoshuo}"}
   script(src=theme.cdn.duoshuo + "/embed.js")
 script(src=theme.cdn.pjax + '/jquery.pjax/1.9.2/jquery.pjax.min.js')
-script(src=theme.cdn.carbon + '/js/carbon.js')
-if config.google_analytics
-  include analytics
 if theme.fancybox
   link(rel='stylesheet', href='/fancybox/source/jquery.fancybox.css', type='text/css', media='screen')
   script(type='text/javascript', src='/fancybox/source/jquery.fancybox.pack.js')
   script.
-    $(document).ready(function (){
-      $('.article-content img').each(function () {
-        var $image = $(this);
-        var $imageLink = $image.parent('a');
-        if ($imageLink.size() < 1) {
-          $imageLink = $image.wrap('<a href="' + this.getAttribute('src') + '"></a>').parent('a');
-        }
-        $imageLink.fancybox();
-      });
-    });
+    var performFancybox = true;
+script(src=theme.cdn.carbon + '/js/carbon.js')
+if config.google_analytics
+  include analytics
