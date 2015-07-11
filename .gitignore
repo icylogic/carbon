@@ -53,4 +53,4 @@ crashlytics-build.properties
 *.css
 !source/fancybox/source/*
 !source/fancybox/source/helpers/*
-*.Thumbs.db
+Thumbs.db
