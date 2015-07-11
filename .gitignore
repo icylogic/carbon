@@ -49,5 +49,8 @@ crashlytics-build.properties
 
 *.swp
 *.js
-*.css
 *.html
+*.css
+!source/fancybox/source/*
+!source/fancybox/source/helpers/*
+*.Thumbs.db
