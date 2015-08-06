@@ -1,14 +1,24 @@
-script(src=theme.cdn.jQuery + '/jquery/2.1.1/jquery.min.js')
+script(defer, src=theme.cdn.jQuery + '/jquery/2.1.4/jquery.min.js')
 if theme.duoshuo
   script(type='text/javascript').
     var duoshuoQuery = {short_name:"!{theme.duoshuo}"}
-  script(src=theme.cdn.duoshuo + "/embed.js")
-script(src=theme.cdn.pjax + '/jquery.pjax/1.9.2/jquery.pjax.min.js')
+  script(defer, src=theme.cdn.duoshuo + "/embed.js")
+script(defer, src=theme.cdn.pjax + '/jquery.pjax/1.9.5/jquery.pjax.min.js')
 if theme.fancybox
-  link(rel='stylesheet', href='/fancybox/source/jquery.fancybox.css', type='text/css', media='screen')
-  script(type='text/javascript', src='/fancybox/source/jquery.fancybox.pack.js')
+  link(rel='stylesheet', href=theme.cdn.fancybox + '/fancybox/2.1.5/jquery.fancybox.css', type='text/css', media='screen')
+  script(defer='defer', type='text/javascript', src=theme.cdn.fancybox + '/fancybox/2.1.5/jquery.fancybox.pack.js')
   script.
     var performFancybox = true;
-script(src=theme.cdn.carbon + '/js/carbon.js')
+if theme.math === 'katex'
+  link(rel='stylesheet', type='text/css', href=theme.cdn.katex + '/katex/0.5.0/katex.min.css')
+  script(async='async', type='text/javascript', src=theme.cdn.katex + '/katex/0.5.0/katex.min.js')
+  script(async='async', type='text/javascript', src=theme.cdn.katex + '/katex/0.5.0/contrib/auto-render.min.js')
+  script.
+    var doRenderMath = 'katex';
+if theme.math === 'mathjax'
+  script.
+    var doRenderMath = 'mathjax'
+  include mathjax
+script(defer='defer', src=theme.cdn.carbon + '/js/carbon.js')
 if config.google_analytics
   include analytics

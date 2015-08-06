@@ -3,21 +3,15 @@ script(type="text/x-mathjax-config").
   MathJax.Hub.Config({
     tex2jax: {
       inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
       processEscapes: true
     }
   });
 script(type="text/x-mathjax-config").
-    MathJax.Hub.Config({
-      tex2jax: {
-        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-      }
-    });
-script(type="text/x-mathjax-config").
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for(i=0; i < all.length; i += 1) {
-            all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-    });
-script(type="text/javascript", src=theme.cdn.mathjax)
+  MathJax.Hub.Config({
+    tex2jax: {
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+  });
+script(async, type="text/javascript", src=theme.cdn.mathjax + '/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML')
 

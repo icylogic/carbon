@@ -1,5 +1,5 @@
 (($) ->
-  if performFancybox
+  if performFancybox? and performFancybox
     setFancybox = ->
       $ '.article-content img'
       .each ->
@@ -10,6 +10,27 @@
         imageLink.fancybox()
   else
     setFancybox = ->
+
+  if doRenderMath?
+    switch doRenderMath
+      when 'katex'
+        renderMath = ->
+          renderMathInElement document.getElementById('content'),
+            delimiters: [
+              {left: "$$", right: "$$", display: true},
+              {left: "\\[", right: "\\]", display: true},
+              {left: "$", right: "$", display: false},
+              {left: "\\(", right: "\\)", display: false}
+            ]
+      when 'mathjax'
+        renderMath = ->
+          #MathJax.Hub.Queue ["Typeset", MathJax.Hub, document.getElementById 'content'] 
+  else
+    renderMath = ->
+
+  renderContent = ->
+    setFancybox()
+    renderMath()
 
   $ document
     .on 'click', '.comments-switch-duoshuo', ->
@@ -40,10 +61,11 @@
       $ '#content'
         .fadeTo 'fast', 1
         # Fix for Google Analytics
-        setFancybox()
-        ga 'set', 'location', window.location.href
-        ga 'sent', 'pageview'
+        renderContent()
+        if ga?
+          ga 'set', 'location', window.location.href
+          ga 'sent', 'pageview'
 
     .ready ->
-      setFancybox()
+      renderContent()
 ) jQuery
