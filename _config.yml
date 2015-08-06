@@ -7,14 +7,16 @@ feed: /atom.xml
 repo: https://icylogic.net
 
 duoshuo: false
-mathjax: true
+math: katex # options: katex, mathjax, false
 fancybox: true
 
 cdn:
-  normalize: '//dn-staticfile.qbox.me'    
+  normalize: '//cdn.jsdelivr.net'    
   carbon: ''
   duoshuo: '//static.duoshuo.com'
-  jQuery: '//dn-staticfile.qbox.me'
-  pjax: '//dn-staticfile.qbox.me'    
-  mathjax: '//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
+  jQuery: '//cdn.jsdelivr.net'
+  pjax: '//cdn.jsdelivr.net'
+  mathjax: '//cdn.mathjax.org'
+  fancybox: '//cdn.jsdelivr.net'
+  katex: '//cdn.jsdelivr.net'
   
