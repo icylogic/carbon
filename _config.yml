@@ -9,6 +9,7 @@ repo: https://icylogic.net
 duoshuo: false
 math: katex # options: katex, mathjax, false
 fancybox: true
+swiftype: false # type your swiftype key here to enable search
 
 cdn:
   normalize: '//cdn.jsdelivr.net'    

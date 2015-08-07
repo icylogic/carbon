@@ -28,9 +28,38 @@
   else
     renderMath = ->
 
+  if swiftypeKey?
+    loadSwiftype = ->
+      ((w, d, t, u, n, s, e) ->
+        w['SwiftypeObject'] = n
+        w[n] = w[n] or ->
+          (w[n].q = w[n].q or []).push arguments
+          return
+        s = d.createElement(t)
+        e = d.getElementsByTagName(t)[0]
+        s.async = 1
+        s.src = u
+        e.parentNode.insertBefore s, e
+        return
+      ) window, document, 'script', '//s.swiftypecdn.com/install/v2/st.js', '_st'
+      _st 'install', swiftypeKey, '2.0.0'
+  else
+    loadSwiftype = ->
+
   renderContent = ->
     setFancybox()
     renderMath()
+    loadSwiftype()
+
+  $ '#search-icon'
+    .click ->
+      $ '#search-input'
+        .toggle 'fast', ->
+          $ this
+            .toggleClass('hidden')
+          if not $('#search-input').hasClass('hidden')
+            $ '#search-input'
+              .focus()
 
   $ document
     .on 'click', '.comments-switch-duoshuo', ->
@@ -65,7 +94,7 @@
         if ga?
           ga 'set', 'location', window.location.href
           ga 'sent', 'pageview'
-
     .ready ->
       renderContent()
+
 ) jQuery

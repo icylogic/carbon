@@ -20,5 +20,8 @@ if theme.math === 'mathjax'
     var doRenderMath = 'mathjax'
   include mathjax
 script(defer='defer', src=theme.cdn.carbon + '/js/carbon.js')
+if theme.swiftype
+  script.
+    var swiftypeKey = '#{theme.swiftype}'
 if config.google_analytics
   include analytics
